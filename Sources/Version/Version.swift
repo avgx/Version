@@ -35,6 +35,13 @@ public struct Version: Sendable {
     public static let null = Version(0,0,0,0)
 }
 
+extension Version: CustomStringConvertible {
+    /// String form `major.minor.patch.build`.
+    public var description: String {
+        "\(major).\(minor).\(patch).\(build)"
+    }
+}
+
 extension Version: LosslessStringConvertible {
     /**
      Creates a version object from a string.
@@ -62,11 +69,6 @@ extension Version: LosslessStringConvertible {
         self.patch = requiredComponents[2]
         self.build = requiredComponents[3]
 
-    }
-
-    /// Returns the lossless string representation of this semantic version.
-    public var description: String {
-        return "\(major).\(minor).\(patch).\(build)"
     }
 }
 
