@@ -8,7 +8,7 @@ extension Version: Hashable {
 }
 
 extension Version: Equatable {
-    /// Compares the provided versions *without* comparing any build-metadata
+    /// Compares all four numeric components (major, minor, patch, build).
     public static func == (lhs: Version, rhs: Version) -> Bool {
         return lhs.major == rhs.major && lhs.minor == rhs.minor && lhs.patch == rhs.patch && lhs.build == rhs.build
     }

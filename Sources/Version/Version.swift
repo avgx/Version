@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Version {
+public struct Version: Sendable {
     /// The major version.
     public let major: Int
 

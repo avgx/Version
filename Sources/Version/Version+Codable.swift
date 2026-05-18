@@ -21,7 +21,7 @@ extension Version: Codable {
 }
 
 /// The method to be used when decoding a Version
-public enum DecodingMethod {
+public enum DecodingMethod: Sendable {
     /// Decode using the strict initializer
     case strict
     /// Decode using the tolerant initializer
